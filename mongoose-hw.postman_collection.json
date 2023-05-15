@@ -130,7 +130,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/v1/users/645e8995cbb73a6fc9ef13aa",
+							"raw": "http://localhost:3000/api/v1/users/64622646441458c7daaefe47",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -140,7 +140,7 @@
 								"api",
 								"v1",
 								"users",
-								"645e8995cbb73a6fc9ef13aa"
+								"64622646441458c7daaefe47"
 							]
 						}
 					},
@@ -152,7 +152,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/v1/users/645eaa680a284d3604908378",
+							"raw": "http://localhost:3000/api/v1/users/64622646441458c7daaefe46",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -162,7 +162,7 @@
 								"api",
 								"v1",
 								"users",
-								"645eaa680a284d3604908378"
+								"64622646441458c7daaefe46"
 							]
 						}
 					},
@@ -198,7 +198,26 @@
 					"name": "Get articles with search by title",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles?title=lvi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "lvi"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -251,7 +270,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/articles/6461ff58de87836963c754e5",
+							"raw": "http://localhost:3000/api/v1/articles/64623dd421ea1124167bdbd9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -261,7 +280,7 @@
 								"api",
 								"v1",
 								"articles",
-								"6461ff58de87836963c754e5"
+								"64623dd421ea1124167bdbd9"
 							]
 						}
 					},
@@ -274,7 +293,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Kiev city\",\r\n    \"subtitle\": \"Kiev history\",\r\n    \"description\": \"All about kiev\",\r\n    \"category\": \"sport\",\r\n    \"userId\": \"6461fcfe548b3f631b0965a7\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Kiev city\",\r\n    \"subtitle\": \"Kiev history\",\r\n    \"description\": \"All about kiev\",\r\n    \"category\": \"history\",\r\n    \"userId\": \"64622646441458c7daaefe48\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -304,7 +323,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Lviv update\",\r\n    \"description\": \"Updated description\",\r\n    \"subtitle\": \"updated about sport in lviv\",\r\n    \"category\": \"sport\",\r\n    \"userId\": \"64622646441458c7daaefe48\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Lviv update\",\r\n    \"description\": \"Updated description\",\r\n    \"subtitle\": \"updated about sport in lviv\",\r\n    \"category\": \"sport\",\r\n    \"userId\": \"64622646441458c7daaefe46\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -312,7 +331,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/articles/64622b990b17f7fc2318cbd1",
+							"raw": "http://localhost:3000/api/v1/articles/64623dd421ea1124167bdbd9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -322,7 +341,7 @@
 								"api",
 								"v1",
 								"articles",
-								"64622b990b17f7fc2318cbd1"
+								"64623dd421ea1124167bdbd9"
 							]
 						}
 					},
@@ -343,7 +362,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/articles/64622d0caaf6698c5bdd89af",
+							"raw": "http://localhost:3000/api/v1/articles/64623dd421ea1124167bdbd7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -353,7 +372,7 @@
 								"api",
 								"v1",
 								"articles",
-								"64622d0caaf6698c5bdd89af"
+								"64623dd421ea1124167bdbd7"
 							]
 						}
 					},
@@ -366,7 +385,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"64622646441458c7daaefe48\"\r\n}",
+							"raw": "{\r\n    \"userId\": \"64622646441458c7daaefe46\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -374,7 +393,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/articles/64622b990b17f7fc2318cbd0/like",
+							"raw": "http://localhost:3000/api/v1/articles/64623dd421ea1124167bdbd9/like",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -384,7 +403,7 @@
 								"api",
 								"v1",
 								"articles",
-								"64622b990b17f7fc2318cbd0",
+								"64623dd421ea1124167bdbd9",
 								"like"
 							]
 						}
@@ -398,7 +417,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"6461fcfe548b3f631b0965a7\"\r\n}",
+							"raw": "{\r\n    \"userId\": \"64622646441458c7daaefe46\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -406,7 +425,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/articles/6461ff58de87836963c754e5/dislike",
+							"raw": "http://localhost:3000/api/v1/articles/64623dd421ea1124167bdbd9/dislike",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -416,7 +435,7 @@
 								"api",
 								"v1",
 								"articles",
-								"6461ff58de87836963c754e5",
+								"64623dd421ea1124167bdbd9",
 								"dislike"
 							]
 						}
