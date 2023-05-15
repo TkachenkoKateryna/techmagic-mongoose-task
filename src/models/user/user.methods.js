@@ -30,36 +30,4 @@ userSchema.methods.deleteUser = function (id) {
 	return User.findByIdAndDelete(id);
 };
 
-userSchema.methods.incrementArticleNumber = function (id) {
-	return User.findByIdAndUpdate(id, {
-		$inc: { numberOfArticles: 1 },
-	});
-};
-
-userSchema.methods.decrementArticleNumber = function (id) {
-	return User.findByIdAndUpdate(id, {
-		$inc: { numberOfArticles: -1 },
-	});
-};
-
-userSchema.methods.likeArticle = function (id, articleId) {
-	return User.findByIdAndUpdate(id, {
-		$addToSet: {
-			likedArticles: {
-				_id: articleId,
-			},
-		},
-	});
-};
-
-userSchema.methods.dislikeArticle = function (id, articleId) {
-	return User.findByIdAndUpdate(id, {
-		$pull: {
-			likedArticles: {
-				_id: articleId,
-			},
-		},
-	});
-};
-
 export default userSchema.methods;
