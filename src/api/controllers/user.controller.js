@@ -1,54 +1,69 @@
+import articleMethods from "../../models/article/article.methods.js";
 import userMethods from "../../models/user/user.methods.js";
+import { AppError } from "../../utils/AppError.js";
+import { catchAsync } from "../../utils/catchAsync.js";
 
-export const getUsers = async (req, res, next) => {
-	try {
-		const users = await userMethods.getAll(req.query);
+export const getUsers = catchAsync(async (req, res, next) => {
+	const users = await userMethods.getAllUsers(req.query);
 
-		res.status(200).json({
-			status: "success",
-			results: users.length,
-			data: { users },
-		});
-	} catch (err) {
-		next(err);
+	res.status(200).json({
+		status: "success",
+		results: users.length,
+		data: { users },
+	});
+});
+
+export const getUserByIdWithArticles = catchAsync(async (req, res, next) => {
+	const user = await userMethods.getUserById(req.params.id);
+
+	if (!user) {
+		return next(new AppError("No user found with that ID", 404));
 	}
-};
 
-export const getUserByIdWithArticles = async (req, res, next) => {
-	try {
-	} catch (err) {
-		next(err);
+	const articles = await articleMethods.getUserArticles(user.id);
+
+	res.status(200).json({
+		status: "success",
+		data: {
+			user,
+			articles,
+		},
+	});
+});
+
+export const createUser = catchAsync(async (req, res, next) => {
+	const newUser = await userMethods.createUser(req.body);
+
+	res.status(201).json({
+		status: "success",
+		data: {
+			user: newUser,
+		},
+	});
+});
+
+export const updateUserById = catchAsync(async (req, res, next) => {
+	const updatedUser = await userMethods.updateUser(req.params.id, req.body);
+
+	if (!updatedUser) {
+		return next(new AppError("No user found with that ID", 404));
 	}
-};
 
-export const createUser = async (req, res, next) => {
-	try {
-		const newUser = await userMethods.createUser(req.body);
-
-		res.status(201).json({
-			status: "success",
-			data: {
-				user: newUser,
-			},
-		});
-	} catch (err) {
-		next(err);
-	}
-};
-
-export const updateUserById = async (req, res, next) => {
-	try {
-		const updatedUser = await userMethods.updateUser(req.params.id, req.body);
-
-		res.status(200).json({ status: "success", data: { user: updatedUser } });
-	} catch (err) {
-		next(err);
-	}
-};
+	res.status(200).json({ status: "success", data: { user: updatedUser } });
+});
 
 export const deleteUserById = async (req, res, next) => {
-	try {
-	} catch (err) {
-		next(err);
+	const userId = req.params.id;
+	const deletedUser = await userMethods.deleteUser(userId);
+
+	if (!deletedUser) {
+		return next(new AppError("No user found with that ID", 404));
 	}
+
+	await articleMethods.deleteManyArticles(userId);
+
+	res.status(204).json({
+		status: "success",
+		data: null,
+	});
 };

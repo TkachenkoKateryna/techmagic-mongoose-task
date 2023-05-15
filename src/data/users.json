@@ -1,0 +1,27 @@
+[
+	{
+		"_id": "64622646441458c7daaefe48",
+		"firstName": "Anna",
+		"lastName": "Black",
+		"email": "anna.black@gmail.com",
+		"role": "admin",
+		"age": 25
+	},
+	{
+		"_id": "64622646441458c7daaefe46",
+		"firstName": "Artem",
+		"lastName": "Black",
+		"email": "artem.black@gmail.com",
+		"role": "writer",
+		"age": 25,
+		"numberOfArticles": 1
+	},
+	{
+		"_id": "64622646441458c7daaefe47",
+		"firstName": "Nastya",
+		"lastName": "White",
+		"email": "nastya.white@gmail.com",
+		"role": "writer",
+		"age": 40
+	}
+]

@@ -1,17 +1,22 @@
 import express from "express";
 import logger from "morgan";
 import router from "../api/routes/index.js";
+import { AppError } from "../utils/AppError.js";
+import { globalErrorHandler } from "../api/middlewares/error.middleware.js";
 
 const app = express();
 
-app.use(logger("dev"));
+if (process.env.NODE_ENV === "development") {
+	app.use(logger("dev"));
+}
 app.use(express.json());
 
 app.use("/api/v1", router);
 
-app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.status(500).send("Something went wrong!");
+app.all("*", (req, res, next) => {
+	next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
 });
+
+app.use(globalErrorHandler);
 
 export default app;
