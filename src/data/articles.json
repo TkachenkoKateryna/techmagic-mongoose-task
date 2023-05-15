@@ -1,5 +1,6 @@
 [
 	{
+		"_id": "64623dd421ea1124167bdbd7",
 		"title": "Football",
 		"subtitle": "Match #1",
 		"description": "All about match #1",
@@ -7,6 +8,7 @@
 		"owner": "64622646441458c7daaefe48"
 	},
 	{
+		"_id": "64623dd421ea1124167bdbd8",
 		"title": "Sims game",
 		"subtitle": "Build a house",
 		"description": "All about building in sims 3",
@@ -14,6 +16,7 @@
 		"owner": "64622646441458c7daaefe48"
 	},
 	{
+		"_id": "64623dd421ea1124167bdbd9",
 		"title": "Lviv city",
 		"subtitle": "Lviv history",
 		"description": "All about lviv",
@@ -21,6 +24,7 @@
 		"owner": "64622646441458c7daaefe46"
 	},
 	{
+		"_id": "64623dd421ea1124167bdbda",
 		"title": "Kharkiv city",
 		"subtitle": "Kharkiv history",
 		"description": "All about kharkiv",
